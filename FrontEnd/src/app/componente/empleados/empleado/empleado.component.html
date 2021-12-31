@@ -1,0 +1,58 @@
+<form [formGroup]="form" (ngSubmit)="guardarEmpleado()">
+    
+    <div class="form-group">
+        <div class="input-group">
+            <!--icono-->
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <!--fallo de angular por modo estricto no afecta ejecucion opcion cambio color [class.green-icon]="this.form.get('Empleado').valid"-->
+                    <i class="fas fa-user-circle fa-w-16 fa-3x" ></i>
+                </div>
+            </div>
+            <input type="text" class="form-control" formControlName="Empleado" placeholder="Nombre y apellidos">
+        </div>
+    </div>
+     <!--opcion cambio color [class.green-icon]="this.form.get('sueldo').valid" componente para agregar sueldo manualmente-->
+    <br>
+    <div class="form-group">
+        <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    
+                    <i class="fas fa-dollar-sign fa-w-16 fa-3x" ></i>
+                </div>
+            </div>
+            <input type="number" id="1"  class="form-control" formControlName="Sueldo" placeholder="sueldo" readonly>
+        </div>
+    </div>
+    <br>
+    <div>   
+        <div class="form-group">
+            <div class="input-group">
+                <!--icono-->
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                        <i class="fas fa-dollar-sign fa-w-16 fa-3x"></i>
+                    </div>
+                </div>
+                <input type="number" class="form-control" formControlName="VentasMes" placeholder="ventas del mes">
+            </div>
+        </div> 
+    </div>
+    <br>     
+    <div>
+    <select class="form-control" formControlName="CategoriaEmpleado" >
+                
+       <option disabled selected>Selecciona un tipo de empleado</option>
+      
+       <option value="junior" >junior</option>
+       <option value="senior">Senior</option> 
+       <option value="master">Master</option>    
+    </select>
+    
+    </div>   
+<br>
+<div class="form-grup">
+    <button class="btn btn-success btn-lg col-md-12" [disabled]="form.invalid" type="submit">ingresar</button>
+</div>
+</form>
